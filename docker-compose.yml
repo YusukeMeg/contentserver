@@ -1,0 +1,22 @@
+version: "3.7"
+services: 
+  nginx:
+    image: proxy-nginx
+    build: ./nginx
+    ports: 
+      - "80:80"
+    volumes:
+      - ./html/:/var/www/html/
+    links:
+      - "aps"
+    deploy:
+      replicas: 3
+  aps:
+    image: node-express-api
+    build: ./s3server
+    ports: 
+      - "3000:3000"
+    volumes:
+      - ./express/:/usr/src/app/db
+    deploy:
+      replicas: 1

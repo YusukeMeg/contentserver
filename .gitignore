@@ -1,0 +1,7 @@
+pupetter
+express/videolist.db
+html/api
+html/static/
+html/thumbs
+html/thums/*.jpg
+s3server/node_modules
