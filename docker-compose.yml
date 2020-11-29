@@ -6,7 +6,7 @@ services:
     ports: 
       - "80:80"
     volumes:
-      - ./html/:/var/www/html/
+      - ./react-videoplayer/build/:/var/www/html/
     links:
       - "aps"
     deploy:
